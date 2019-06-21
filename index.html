@@ -3,8 +3,9 @@
 
 <head>
   <!-- Load in libraries here -->
-  <script src="https://unpkg.com/vue"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+  <script src="./libraries/vue.js"></script>
+  <script src="./libraries/p5.min.js"></script>
+  <script src="./libraries/p5.sound.min.js"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
   <h3>You are hearing a sine wave of amplitude {{amp}} and frequency {{baseFreq}} Hz.</h3>
 
   <!-- Vue components for p5 sketches, also bound to data -->
-  <p5 src="./p5-sketch1.js" :data="data"></p5>
+  <p5 src="./p5-sketch1.js" :data="{amp: amp, baseFreq: baseFreq}"></p5>
 
 </div>
 
