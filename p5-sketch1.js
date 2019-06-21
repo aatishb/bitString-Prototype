@@ -24,12 +24,13 @@ function sketch(parent) { // we pass the sketch data from the parent
         if (amp !== parent.data.amp || freq !== parent.data.baseFreq){
           amp = parent.data.amp;
           freq = parent.data.baseFreq;
-          p.background(p.map(freq, 200, 2000, 0, 255)); // color changes based on freq
-          console.log(amp);
-          console.log(freq);
-          osc.amp(amp);
-          osc.freq(freq);
 
+          p.background(p.map(freq, 200, 2000, 0, 255)); // color changes based on freq
+
+          // for some reason osc.freq() and osc.amp() aren't working
+          // so instead i'm updating these values directly for now..
+          osc.freqNode.value = freq;
+          osc.output.gain.value = amp;
         }
 
       };
